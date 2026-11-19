@@ -11,5 +11,6 @@ WORKDIR /app
 COPY . .
 
 RUN composer install --no-dev --optimize-autoloader
+RUN mkdir -p storage/framework/cache/laravel-excel && chmod -R 775 storage bootstrap/cache
 
 CMD sh -c "php artisan migrate --force && php artisan db:seed --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8000}"
