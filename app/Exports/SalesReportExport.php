@@ -3,9 +3,10 @@
 namespace App\Exports;
 
 use Carbon\Carbon;
+use Maatwebsite\Excel\Concerns\Export;
 use Maatwebsite\Excel\Concerns\WithMultipleSheets;
 
-class SalesReportExport implements WithMultipleSheets
+class SalesReportExport implements Export, WithMultipleSheets
 {
     public function __construct(
         protected Carbon $start,

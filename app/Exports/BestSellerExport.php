@@ -9,8 +9,9 @@ use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
 use Maatwebsite\Excel\Concerns\WithTitle;
+use Maatwebsite\Excel\Concerns\Export;
 
-class BestSellerExport implements FromCollection, WithHeadings, WithMapping, WithTitle
+class BestSellerExport implements Export, FromCollection, WithHeadings, WithMapping, WithTitle
 {
     public function __construct(
         protected Carbon $start,
